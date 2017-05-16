@@ -1,0 +1,15 @@
+<?php
+$field1 = $_GET["ipaddress"];
+$field2 = $_GET["hostname"];
+$field3 = $_GET["username"];
+$field4 = $_GET["password"];
+echo "$field1 $field2 $field3 $field4";
+//Obviously, this is a temporary location :D
+$output1 = shell_exec("sudo -u root -S bash /tmp/ubuntu-bootstrap.sh '$field1' '$field2' 2>&1");
+
+#echo shell_exec("knife bootstrap '$field1' --ssh-user '$field3' --ssh-password '$field4' --sudo --use-sudo-password --node-name '$field2' --run-list 'recipe[ubuntu_test]' --node-ssl-verify-mode none 2>&1");
+#echo shell_exec("cat /tmp/ubuntu-bootstrap.sh 2>&1");
+#echo $output1;
+echo "<pre>$output1</pre>";
+#echo "<pre>$output2</pre>";
+?>

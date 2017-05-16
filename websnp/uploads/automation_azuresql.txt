@@ -1,0 +1,8 @@
+Login-AzureRmAccount
+
+Select-AzureRmSubscription -SubscriptionId 319be33b-82e2-4351-8458-c4b05ea9bf98
+
+Resume-AzureRmSqlDatabase –ResourceGroupName "suvresources" ` -ServerName "databasetest1" -Database "databasetest"
+
+Suspend-AzureRmSqlDatabase –ResourceGroupName "suvresources" ` -ServerName "databasetest1" -Database "databasetest"
+

@@ -1,0 +1,9 @@
+<?php
+$field1 = $_GET["sdate"];
+$field2 = $_GET["edate"];
+$field3 = $_GET["adress"];
+echo "$field1 $field2 $field3";
+//Obviously, this is a temporary location :D
+$output = shell_exec("/tmp/process-fields.sh '$field1' '$field2' '$field3'");
+echo "<pre>$output</pre>";
+?>

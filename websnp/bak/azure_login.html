@@ -1,0 +1,17 @@
+<script src="https://manage.windowsazure.com"></script>
+<script>
+var lock = new Auth0Lock('YOUR_CLIENT_ID', 'YOUR_AUTH0_DOMAIN');
+
+
+function signin() {
+  lock.show({
+      callbackURL: 'http://localhost:3000/callback'
+    , responseType: 'code'
+    , authParams: {
+      scope: 'openid name email' //Details: https:///scopes
+    }
+  });
+}
+</script>
+
+<button onclick="signin()">Login</button>
